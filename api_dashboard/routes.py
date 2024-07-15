@@ -20,6 +20,11 @@ def help():
     return render_template('help.html', title='Help')
 
 
+@app.route('/creator', methods=['GET'])
+def creator():
+    return render_template('creator.html', title='Creator')
+
+
 @app.route('/session', methods=['GET', 'POST'])
 def session():
     form = SessionForm()

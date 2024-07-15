@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-4 border-end">
+            <ul id="mapping_menu" class="css-ul css-xleftbar" style="margin-bottom: 55px">
+
+			</ul>
+        </div>
+        <div class="col-8">
+            <code id="_path" class="">></code>
+            <hr>
+
+            <form id="_form" name="field_data" action="">
+				<label for="_name">Name:</label>
+				<input id="_name" class="css-input" name="_name" type="text" title="name">
+
+				<label for="_type">Type:</label>
+				<select id="_type" class="css-select" name="_type" onclick="change_type(this.value)">
+					<option value="" selected disabled> Choose a type</option>
+					<option value="String">String</option>
+					<option value="Number">Number</option>
+					<option value="Boolean">Boolean</option>
+					<option value="Object">Object</option>
+					<option value="Array">Array</option>
+					<option value="Null">Null</option>
+				</select>
+
+				<input id="_optional" class="css-check" type="checkbox" name="_optional">
+				<label for="_optional">Is Optional</label>
+				<br/>
+
+				<input id="_nullable" class="css-check" type="checkbox" name="_nullable">
+				<label for="_nullable">Is Nullable</label>
+				<br/>
+
+				<div style="display: none" id="string-type">
+					<label for="_enums">Enums:</label>
+					<input id="_enums" class="css-input" type="text" name="_enums" title="on,off,unknown">
+
+					<label for="_regex">Regex:</label>
+					<input id="_regex" class="css-input" type="text" name="_enums" title="^(0-9)">
+				</div>
+
+				<div style="display: none" id="object-type">
+					<label for="_properties">Properties:</label>
+					<input id="_properties" class="css-button" type="button" value="[+]" onclick="">
+				</div>
+
+				<div style="display: none" id="array-type">
+					<label for="_minlen">Minimum length:</label>
+					<input id="_minlen" class="css-input-number" type="number" name="_minlen" title="12">
+
+					<label for="_maxlen">Maximum length:</label>
+					<input id="_maxlen" class="css-input-number" type="number" name="_maxlen" title="256">
+					<br/>
+
+					<label for="_values">Values:</label>
+					<input id="_values" class="css-button" type="button" value="[+]">
+
+				</div>
+				<br>
+
+				<button id="save_button" class="css-button css-round-xxlarge css-bar css-green" style="width: calc(100% - 55px);" type="button" onclick="save_field(undefined, false)"><i class="fa fa-save fa-fw css-large"></i> SAVE</button>
+				<button id="delete_button" class="css-button css-round-xxlarge css-bar css-gray css-right" style="width: 50px;" type="button" onclick="delete_field(undefined)"><i class="fa fa-trash css-large"></i></button>
+			</form>
+        </div>
+    </div>
+{% endblock content %}

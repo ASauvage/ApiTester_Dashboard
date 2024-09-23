@@ -1,3 +1,5 @@
+from crypt import methods
+
 from flask import render_template, flash
 from . import app
 from .forms import SessionForm
@@ -71,4 +73,12 @@ def session_details(_id):
         template_name_or_list='details.html',
         title='Details',
         session=MongoCon().get_document_by_id(_id)
+    )
+
+
+@app.route('/creator', methods=['GET'])
+def creator():
+    return render_template(
+        template_name_or_list='creator.html',
+        title='Creator'
     )

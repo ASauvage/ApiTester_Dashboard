@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="sticky-top z-0" style="top:20px">
+                <div class="content-section rounded-4">
+                    <h3 class="border-bottom">Fields</h3>
+                    <div class="border-start border-5" style="border-color: red !important;">
+                        <button class="btn text-start" style="width: calc(100% - 50px);">
+                            metadata
+                            <sub class="text-secondary float-end">Object</sub>
+                            <button class="btn btn-success" style="width: 50px;">+</button>
+                        </button>
+                        <div class="border-start border-5" style="border-color: blue !important;">
+                        <button class="btn text-start" style="width: calc(100% - 50px);">
+                            request_id
+                            <sub class="text-secondary float-end">String</sub>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-8">
+            <code id="_path" class="">> metadata > request_id</code>
+            <div></div>
+        </div>
+    </div>
+
+    <footer class="position-absolute bottom-0 end-0 m-4" style="z-index: 2;">
+        <button class="btn btn-primary rounded-pill" title="upload JSON"><i class="bi bi-upload fs-4 px-1"></i></button>
+        <button class="btn btn-warning rounded-pill" title="download JSON"><i class="bi bi-download fs-4 px-1"></i></button>
+        <button class="btn btn-dark rounded-pill" title="view raw JSON"><i class="bi bi-braces fs-4 px-1"></i></button>
+    </footer>
+{% endblock content %}
